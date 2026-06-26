@@ -6,6 +6,12 @@ const HERO_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e6
 const BEFORE_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/f49b364a-5ea1-490d-b05d-8c663e1b9a7c.jpg';
 const AFTER_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/63e1c469-b533-403c-95cc-cb2a770b3af3.jpg';
 
+const hydroPhotos = [
+  { url: 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/3cce8aca-f2f9-4908-87d4-2383f71aac83.jpg', title: 'Промывка внутри трубы', desc: 'Струя воды под давлением 200 бар разрушает отложения' },
+  { url: 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/ea2f5436-65e3-48f7-8e31-b7aa8ae24a50.jpg', title: 'Работа на объекте', desc: 'Мастер подключает гидродинамическую установку к колодцу' },
+  { url: 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/48b5e7fe-ca08-4510-b522-c833588eb555.jpg', title: 'Форсунка в трубе', desc: 'Роторная насадка очищает стенки трубы по всей длине' },
+];
+
 const methods = [
   { icon: 'Waves', title: 'Гидродинамика', desc: 'Промывка под высоким давлением водой до 200 бар. Удаляет жир, ил и отложения без вреда трубам.' },
   { icon: 'Cable', title: 'Механический трос', desc: 'Стальной трос с насадками пробивает плотные засоры, корни и инородные предметы в трубах.' },
@@ -189,6 +195,22 @@ const Index = () => {
           </div>
           <div className="mx-auto max-w-4xl">
             <BeforeAfter />
+            <div className="mt-10 mb-4">
+              <h3 className="font-display text-2xl font-bold uppercase">Гидродинамическая промывка</h3>
+              <p className="mt-1 text-muted-foreground">Фотографии с наших объектов</p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3 mb-10">
+              {hydroPhotos.map((p) => (
+                <div key={p.title} className="group relative overflow-hidden rounded-2xl border border-border">
+                  <img src={p.url} alt={p.title} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute bottom-0 left-0 right-0 translate-y-4 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <h4 className="font-display font-semibold text-foreground">{p.title}</h4>
+                    <p className="mt-1 text-xs text-muted-foreground">{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               {[
                 ['MapPin', 'Жилой дом', 'Промывка стояка гидродинамикой, устранён засор на 5 этажах'],
