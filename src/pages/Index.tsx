@@ -74,7 +74,7 @@ const Index = () => {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2 font-display text-xl font-bold">
             <Icon name="Droplets" className="text-primary" size={26} />
-            АКВА<span className="text-primary">ПРОЧИСТ</span>
+            ЗАСОР <span className="text-primary">27</span>
           </div>
           <nav className="hidden gap-7 md:flex">
             {nav.map((n, i) => (
@@ -265,9 +265,9 @@ const Index = () => {
         <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex items-center gap-2 font-display text-lg font-bold">
             <Icon name="Droplets" className="text-primary" size={22} />
-            АКВА<span className="text-primary">ПРОЧИСТ</span>
+            ЗАСОР <span className="text-primary">27</span>
           </div>
-          <p className="text-sm text-muted-foreground">© 2026 АкваПрочист. Аварийная прочистка канализации 24/7</p>
+          <p className="text-sm text-muted-foreground">© 2026 Засор 27. Аварийная прочистка канализации 24/7</p>
         </div>
       </footer>
     </div>
