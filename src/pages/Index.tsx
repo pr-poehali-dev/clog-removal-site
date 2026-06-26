@@ -81,7 +81,7 @@ const Index = () => {
               <a key={n} href={`#${navIds[i]}`} className="text-sm text-muted-foreground transition-colors hover:text-primary">{n}</a>
             ))}
           </nav>
-          <a href="tel:+74950000000">
+          <a href="tel:+79294132727">
             <Button className="font-display font-semibold">
               <Icon name="Phone" size={16} /> Вызвать
             </Button>
@@ -237,7 +237,7 @@ const Index = () => {
                 </h2>
                 <p className="mt-4 text-muted-foreground">Дежурная бригада на связи круглосуточно. Выезд в течение 40 минут по городу.</p>
                 <div className="mt-8 space-y-4">
-                  {[['Phone', '+7 (495) 000-00-00'], ['Mail', 'info@akvaprochist.ru'], ['MapPin', 'Москва и область, выезд 24/7']].map(([icon, txt]) => (
+                  {[['Phone', '+7 (929) 413-27-27'], ['Mail', 'info@akvaprochist.ru'], ['MapPin', 'Москва и область, выезд 24/7']].map(([icon, txt]) => (
                     <div key={txt} className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         <Icon name={icon} size={18} />
