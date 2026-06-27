@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
-const HERO_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/edd2ea94-057b-48cf-b430-ee5370ca2f78.jpg';
+const HERO_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/27d9afa1-a4f4-40f2-a58d-a5b701105a1f.jpg';
 const BEFORE_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/f49b364a-5ea1-490d-b05d-8c663e1b9a7c.jpg';
 const AFTER_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/63e1c469-b533-403c-95cc-cb2a770b3af3.jpg';
 
