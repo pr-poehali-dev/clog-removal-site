@@ -139,8 +139,8 @@ const Index = () => {
 
       <section className="relative flex min-h-screen items-center overflow-hidden pt-16 grid-bg">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="" className="h-full w-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20" />
+          <img src={HERO_IMG} alt="" className="h-full w-full object-cover opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
         </div>
         <div className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-primary/20 blur-[100px] animate-glow" />
 
