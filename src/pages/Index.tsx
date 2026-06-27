@@ -306,7 +306,7 @@ const Index = () => {
                 </h2>
                 <p className="mt-4 text-muted-foreground">Дежурная бригада на связи круглосуточно. Выезд в течение 40 минут по городу.</p>
                 <div className="mt-8 space-y-4">
-                  {[['Phone', '+7 (929) 413-27-27'], ['Mail', 'zasor27@gmail.com'], ['MapPin', 'Москва и область, выезд 24/7']].map(([icon, txt]) => (
+                  {[['Phone', '+7 (929) 413-27-27'], ['Mail', 'zasor27@gmail.com'], ['MapPin', 'г. Хабаровск, выезд 24/7']].map(([icon, txt]) => (
                     <div key={txt} className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         <Icon name={icon} size={18} />
