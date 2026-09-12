@@ -295,6 +295,27 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="coverage" className="border-y border-border bg-secondary/30 py-24">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <span className="font-display text-sm font-semibold uppercase tracking-widest text-primary">География</span>
+            <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">Зона обслуживания</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">Работаем по всему Хабаровску и пригороду. Выезд бригады в течение 40 минут в любую точку зоны обслуживания.</p>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl border border-border">
+            <iframe
+              title="Зона обслуживания Засор 27 — Хабаровск"
+              src="https://yandex.ru/map-widget/v1/?ll=135.083800%2C48.482700&z=11&l=map&pt=135.083800%2C48.482700%2Cpm2rdm"
+              width="100%"
+              height="450"
+              frameBorder="0"
+              loading="lazy"
+              className="grayscale-[20%]"
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="contacts" className="py-24">
         <div className="container">
           <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-card p-10 md:p-16 grid-bg">
