@@ -1,0 +1,4 @@
+{"tests": [
+  {"name": "Missing fields", "method": "POST", "path": "/", "body": {"name": "", "phone": "", "consent": true}, "expectedStatus": 400, "expectedBody": {"error": "string"}, "bodyMatcher": "partial"},
+  {"name": "No consent", "method": "POST", "path": "/", "body": {"name": "Тест", "phone": "+79990000000", "consent": false}, "expectedStatus": 400, "expectedBody": {"error": "string"}, "bodyMatcher": "partial"}
+]}

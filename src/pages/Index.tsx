@@ -3,6 +3,8 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import Faq from '@/components/Faq';
 import { Link } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
+import funcUrls from '../../backend/func2url.json';
 import { Checkbox } from '@/components/ui/checkbox';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/27d9afa1-a4f4-40f2-a58d-a5b701105a1f.jpg';
@@ -117,6 +119,32 @@ function BeforeAfter() {
 
 const Index = () => {
   const [consent, setConsent] = useState(false);
+  const [form, setForm] = useState({ name: '', phone: '', message: '' });
+  const [sending, setSending] = useState(false);
+  const { toast } = useToast();
+
+  const submitLead = async () => {
+    if (!form.name.trim() || !form.phone.trim()) {
+      toast({ title: 'Заполните имя и телефон', variant: 'destructive' });
+      return;
+    }
+    setSending(true);
+    try {
+      const res = await fetch(funcUrls['submit-lead'], {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, consent }),
+      });
+      if (!res.ok) throw new Error();
+      toast({ title: 'Заявка отправлена', description: 'Мы свяжемся с вами в ближайшее время' });
+      setForm({ name: '', phone: '', message: '' });
+      setConsent(false);
+    } catch {
+      toast({ title: 'Не удалось отправить заявку', description: 'Позвоните нам: +7 (929) 413-27-27', variant: 'destructive' });
+    } finally {
+      setSending(false);
+    }
+  };
   const nav = ['Услуги', 'Методы', 'Портфолио', 'Отзывы', 'Контакты'];
   const navIds = ['services', 'methods', 'portfolio', 'reviews', 'contacts'];
 
@@ -346,9 +374,9 @@ const Index = () => {
               <div className="rounded-2xl border border-border bg-background/60 p-7">
                 <h3 className="font-display text-xl font-semibold">Оставить заявку</h3>
                 <div className="mt-5 space-y-4">
-                  <input placeholder="Ваше имя" className="h-12 w-full rounded-lg border border-input bg-secondary/50 px-4 outline-none focus:border-primary" />
-                  <input placeholder="Телефон" className="h-12 w-full rounded-lg border border-input bg-secondary/50 px-4 outline-none focus:border-primary" />
-                  <textarea placeholder="Опишите проблему" rows={3} className="w-full rounded-lg border border-input bg-secondary/50 px-4 py-3 outline-none focus:border-primary" />
+                  <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Ваше имя" className="h-12 w-full rounded-lg border border-input bg-secondary/50 px-4 outline-none focus:border-primary" />
+                  <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} type="tel" placeholder="Телефон" className="h-12 w-full rounded-lg border border-input bg-secondary/50 px-4 outline-none focus:border-primary" />
+                  <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Опишите проблему" rows={3} className="w-full rounded-lg border border-input bg-secondary/50 px-4 py-3 outline-none focus:border-primary" />
                   <div className="flex items-start gap-3">
                     <Checkbox id="consent" checked={consent} onCheckedChange={(v) => setConsent(v === true)} className="mt-0.5" />
                     <label htmlFor="consent" className="text-xs leading-relaxed text-muted-foreground">
@@ -356,7 +384,7 @@ const Index = () => {
                       <Link to="/privacy" className="text-primary underline">Политикой конфиденциальности</Link>
                     </label>
                   </div>
-                  <Button disabled={!consent} className="h-12 w-full font-display text-base font-semibold">Вызвать мастера</Button>
+                  <Button onClick={submitLead} disabled={!consent || sending} className="h-12 w-full font-display text-base font-semibold">{sending ? 'Отправляем...' : 'Вызвать мастера'}</Button>
                 </div>
               </div>
             </div>
