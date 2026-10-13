@@ -5,7 +5,7 @@ import Icon from '@/components/ui/icon';
 const OPERATOR = 'ИП Тузовская Е. Б.';
 const INN = '270413834600';
 const OGRN = 'ОГРНИП 322272400007319';
-const ADDRESS = '[Адрес оператора]';
+const ADDRESS = 'г. Хабаровск, ул. Юности, 6, кв. 42';
 const EMAIL = 'zasor27@gmail.com';
 const PHONE = '+7 (929) 413-27-27';
 
