@@ -95,11 +95,11 @@ function BeforeAfter() {
       onTouchMove={(e) => move(e.touches[0].clientX)}
       onClick={(e) => move(e.clientX)}
     >
-      <img src={AFTER_IMG} alt="После" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={AFTER_IMG} alt="Канализация после прочистки" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute bottom-4 right-4 z-10 rounded-full bg-primary px-4 py-1 font-display text-sm font-semibold text-primary-foreground">ПОСЛЕ</div>
 
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img src={BEFORE_IMG} alt="До" className="absolute inset-0 h-full max-w-none object-cover" style={{ width: ref.current?.offsetWidth || '100%' }} />
+        <img src={BEFORE_IMG} alt="Засор в канализации до прочистки" loading="lazy" className="absolute inset-0 h-full max-w-none object-cover" style={{ width: ref.current?.offsetWidth || '100%' }} />
         <div className="absolute bottom-4 left-4 rounded-full bg-accent px-4 py-1 font-display text-sm font-semibold text-accent-foreground">ДО</div>
       </div>
 
@@ -139,7 +139,7 @@ const Index = () => {
 
       <section className="relative flex min-h-screen items-center overflow-hidden pt-16 grid-bg">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="" className="h-full w-full object-cover opacity-90" />
+          <img src={HERO_IMG} alt="Прочистка канализации в Хабаровске — мастер Засор 27" fetchPriority="high" className="h-full w-full object-cover opacity-90" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
         </div>
         <div className="absolute -right-20 top-20 h-72 w-72 rounded-full bg-primary/20 blur-[100px] animate-glow" />
@@ -247,7 +247,7 @@ const Index = () => {
                 <div className="grid gap-4 sm:grid-cols-3 mb-6">
                   {section.photos.map((p) => (
                     <div key={p.title} className="group relative overflow-hidden rounded-2xl border border-border">
-                      <img src={p.url} alt={p.title} className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <img src={p.url} alt={`${p.title} — прочистка канализации в Хабаровске`} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                       <div className="absolute bottom-0 left-0 right-0 translate-y-4 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <h4 className="font-display font-semibold text-foreground">{p.title}</h4>
