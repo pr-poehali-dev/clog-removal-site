@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import Faq from '@/components/Faq';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/27d9afa1-a4f4-40f2-a58d-a5b701105a1f.jpg';
 const BEFORE_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/7b261173-07cb-43ba-b072-d23c1fc25d82.jpg';
@@ -294,6 +295,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Faq />
 
       <section id="coverage" className="border-y border-border bg-secondary/30 py-24">
         <div className="container">
