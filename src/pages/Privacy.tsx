@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 const OPERATOR = 'ИП Тузовская Е. Б.';
-const INN = '[ИНН]';
+const INN = '270413834600';
 const OGRN = 'ОГРНИП [номер]';
 const ADDRESS = '[Адрес оператора]';
 const EMAIL = 'zasor27@gmail.com';
