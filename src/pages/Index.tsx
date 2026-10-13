@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import Faq from '@/components/Faq';
+import { Link } from 'react-router-dom';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/27d9afa1-a4f4-40f2-a58d-a5b701105a1f.jpg';
 const BEFORE_IMG = 'https://cdn.poehali.dev/projects/faeede83-1619-4dcf-96bf-a71e66dabfc2/files/7b261173-07cb-43ba-b072-d23c1fc25d82.jpg';
@@ -114,6 +116,7 @@ function BeforeAfter() {
 }
 
 const Index = () => {
+  const [consent, setConsent] = useState(false);
   const nav = ['Услуги', 'Методы', 'Портфолио', 'Отзывы', 'Контакты'];
   const navIds = ['services', 'methods', 'portfolio', 'reviews', 'contacts'];
 
@@ -346,7 +349,14 @@ const Index = () => {
                   <input placeholder="Ваше имя" className="h-12 w-full rounded-lg border border-input bg-secondary/50 px-4 outline-none focus:border-primary" />
                   <input placeholder="Телефон" className="h-12 w-full rounded-lg border border-input bg-secondary/50 px-4 outline-none focus:border-primary" />
                   <textarea placeholder="Опишите проблему" rows={3} className="w-full rounded-lg border border-input bg-secondary/50 px-4 py-3 outline-none focus:border-primary" />
-                  <Button className="h-12 w-full font-display text-base font-semibold">Вызвать мастера</Button>
+                  <div className="flex items-start gap-3">
+                    <Checkbox id="consent" checked={consent} onCheckedChange={(v) => setConsent(v === true)} className="mt-0.5" />
+                    <label htmlFor="consent" className="text-xs leading-relaxed text-muted-foreground">
+                      Я даю согласие на обработку моих персональных данных в соответствии с{' '}
+                      <Link to="/privacy" className="text-primary underline">Политикой конфиденциальности</Link>
+                    </label>
+                  </div>
+                  <Button disabled={!consent} className="h-12 w-full font-display text-base font-semibold">Вызвать мастера</Button>
                 </div>
               </div>
             </div>
@@ -360,7 +370,10 @@ const Index = () => {
             <Icon name="Droplets" className="text-primary" size={22} />
             ЗАСОР <span className="text-primary">27</span>
           </div>
-          <p className="text-sm text-muted-foreground">© 2026 Засор 27. Аварийная прочистка канализации 24/7</p>
+          <div className="flex flex-col items-center gap-1 text-center text-sm text-muted-foreground md:items-end md:text-right">
+            <p>© 2026 Засор 27. Аварийная прочистка канализации 24/7</p>
+            <Link to="/privacy" className="underline hover:text-primary">Политика конфиденциальности</Link>
+          </div>
         </div>
       </footer>
     </div>
