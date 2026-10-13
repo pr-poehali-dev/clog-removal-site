@@ -372,6 +372,8 @@ const Index = () => {
           </div>
           <div className="flex flex-col items-center gap-1 text-center text-sm text-muted-foreground md:items-end md:text-right">
             <p>© 2026 Засор 27. Аварийная прочистка канализации 24/7</p>
+            <p className="text-xs">ИП Тузовская Е. Б., ИНН 270413834600, ОГРНИП 322272400007319</p>
+            <p className="text-xs">г. Хабаровск, ул. Юности, 6, кв. 42</p>
             <Link to="/privacy" className="underline hover:text-primary">Политика конфиденциальности</Link>
           </div>
         </div>
