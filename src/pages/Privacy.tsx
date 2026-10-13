@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
-const OPERATOR = '[Наименование оператора: ИП ФИО / ООО «Название»]';
+const OPERATOR = 'ИП Тузовская Е. Б.';
 const INN = '[ИНН]';
-const OGRN = '[ОГРН / ОГРНИП]';
+const OGRN = 'ОГРНИП [номер]';
 const ADDRESS = '[Адрес оператора]';
 const EMAIL = 'zasor27@gmail.com';
 const PHONE = '+7 (929) 413-27-27';
